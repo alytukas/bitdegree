@@ -4,6 +4,7 @@ import { onBeforeUnmount, ref, onMounted } from 'vue';
 import $ from "jquery";
 import 'datatables.net-bs4/css/dataTables.bootstrap4.min.css';
 import 'datatables.net-bs4';
+import { DateTimeFormatOptions } from 'intl';
 
 // let myTable: DataTables.Api | undefined;
 
@@ -38,7 +39,7 @@ onMounted(() => {
                 minute: "2-digit",
                 // second: "2-digit",
                 hour12: false,
-            };
+            } as DateTimeFormatOptions;
             return date.toLocaleString(undefined, options);
         } },  
         ],
